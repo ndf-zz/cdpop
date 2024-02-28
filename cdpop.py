@@ -4,8 +4,6 @@
 import asyncio
 import ssl
 import tornado.web
-import tornado.ioloop
-import tornado.template
 import json
 import sys
 from time import sleep
