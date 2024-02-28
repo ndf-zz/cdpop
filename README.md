@@ -32,10 +32,6 @@ status requests will return Internal Server Error (500).
    - tornado
    - posiflex-hidcd
 
-## Installation
-
-	pip install foundsound-cdpop
-
 ## Configuration
 
 Copy example config to a new file and edit as required.
