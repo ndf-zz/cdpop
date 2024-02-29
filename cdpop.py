@@ -171,6 +171,8 @@ class CdPop:
                     except Exception:
                         _log.warning('Ignored invalid drawer number')
                     self.config['drawer'] = nv
+                if 'host' in cf:
+                    self.config['host'] = cf['host']
                 if 'cert' in cf:
                     self.config['cert'] = cf['cert']
                 if 'key' in cf:
