@@ -84,7 +84,7 @@ class CdPop:
         self._cd = None
         self.config = {
             'host': 'localhost',
-            'port': 8000,
+            'port': 41514,
             'cert': None,
             'key': None,
             'auth': None,
@@ -156,7 +156,7 @@ class CdPop:
         if configFile is not None:
             with open(configFile) as f:
                 cf = json.load(f)
-                if 'port' in cf and self.config['port'] is not None:
+                if 'port' in cf and cf['port'] is not None:
                     self.config['port'] = int(cf['port'])
                     nv = None
                     try:
@@ -172,7 +172,8 @@ class CdPop:
                         _log.warning('Ignored invalid drawer number')
                     self.config['drawer'] = nv
                 if 'host' in cf:
-                    self.config['host'] = cf['host']
+                    if cf['host'] is not None:
+                        self.config['host'] = cf['host']
                 if 'cert' in cf:
                     self.config['cert'] = cf['cert']
                 if 'key' in cf:
